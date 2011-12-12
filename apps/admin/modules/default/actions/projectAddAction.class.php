@@ -113,6 +113,16 @@ class projectAddAction extends sfAction
       ->findOne()
     ;
 
+    $project2 = RepositoryQuery::create()
+      ->filterByRemote($remote)
+      ->findOne()
+    ;
+
+    $project2 = RepositoryQuery::create()
+      ->filterByRemote($remote)
+      ->findOne()
+    ;
+
     if($project1 === null && $project2 === null)
     {
       return -1;
