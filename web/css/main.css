@@ -6,7 +6,7 @@
   border:1px solid #d8d8d8;
   margin-bottom:20px;
 }
-.list .list_head {
+.list .list_footer, .list .list_head {
   border-bottom:1px solid #cccccc;
   padding:0 5px;
   height:30px;
@@ -17,19 +17,19 @@
   text-shadow:0 1px 0 rgba(255,255,255,1);
   overflow:hidden;
 }
-.list .list_head span.title {
+.list .list_footer span.title, .list .list_head span.title {
   color:#666666;
   font-weight:bold;
 }
-.list .list_head.icon {
+.list .list_footer.icon, .list .list_head.icon {
   background-image:url('../images/icons.png');
   background-repeat:no-repeat;
   padding-left:30px;
 }
-.list .list_head.icon.status_action { background-position:6px -294px; }
-.list .list_head.icon.comment_board { background-position:6px 6px; }
-.list .list_head .status { margin-right:5px; }
-.list .list_head .status > a {
+.list .list_footer.icon.status_action, .list .list_head.icon.status_action { background-position:6px -294px; }
+.list .list_footer.icon.comment_board, .list .list_head.icon.comment_board { background-position:6px 6px; }
+.list .list_footer .status, .list .list_head .status { margin-right:5px; }
+.list .list_footer .status > a, .list .list_head .status > a {
   display:inline-block;
   width:23px;
   height:23px;
@@ -37,8 +37,8 @@
   text-indent:-9999px;
   margin-top:4px;
 }
-.list .list_head .status > a.status-valid { background:url('../images/accept.gif') 0 0 no-repeat; }
-.list .list_head .status > a.status-invalid { background:url('../images/cancel.gif') 0 0 no-repeat; }
+.list .list_footer .status > a.status-valid, .list .list_head .status > a.status-valid { background:url('../images/accept.gif') 0 0 no-repeat; }
+.list .list_footer .status > a.status-invalid, .list .list_head .status > a.status-invalid { background:url('../images/cancel.gif') 0 0 no-repeat; }
 .list .list_body.scrollable {
   max-height:228px;
   overflow-y:scroll;

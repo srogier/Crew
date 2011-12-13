@@ -10,13 +10,7 @@
       <span class="tooltip" title="<?php echo stringUtils::trimTicketInfos($file->getLastChangeCommitDesc()) ?>">
         <?php echo stringUtils::shorten(stringUtils::trimTicketInfos($file->getLastChangeCommitDesc()), 65) ?>
       </span>
-      <ul class="right actions">
-        <li class="status">
-          <button class="icon success like <?php echo $file->getStatus() === BranchPeer::OK ? 'enabled' : ''?>"><?php echo link_to('Validate file', 'default/fileToggleValidate', array('title' => 'Validate file', 'query_string' => 'file='.$file->getId(), 'class' => 'toggle')) ?></button>
-          <button class="icon danger dislike <?php echo $file->getStatus() === BranchPeer::KO ? 'enabled' : ''?>"><?php echo link_to('Invalidate file', 'default/fileToggleUnvalidate', array('title' => 'Invalidate file', 'query_string' => 'file='.$file->getId(), 'class' => 'toggle')) ?></button>
-          <button><?php echo link_to('View file', 'default/fileContent', array('title' => 'View entire file', 'query_string' => 'file='.$file->getId())) ?></button>
-        </li>
-      </ul>
+      <?php include_partial('default/buttons', array('file' => $file)) ?>
     </div>
     <div id="window" class="list_body data">
       <table>
@@ -49,6 +43,9 @@
           <?php endforeach; ?>
         </tbody>
       </table>
+    </div>
+    <div class="list_footer">
+      <?php include_partial('default/buttons', array('file' => $file)) ?>
     </div>
     <div id="comment_component" class="comments_holder">
       <?php include_component('default', 'commentGlobal', array('id' => $file->getId(), 'type' => CommentPeer::TYPE_FILE)); ?>
